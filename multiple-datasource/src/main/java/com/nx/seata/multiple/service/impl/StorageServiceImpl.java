@@ -24,6 +24,7 @@ public class StorageServiceImpl implements StorageService {
     @Transactional//(propagation = Propagation.REQUIRES_NEW)
     @Override
     public void deduct(String commodityCode, int count){
+        
         log.info("=============扣减库存=================");
         //切换数据源
      //   log.info("当前 XID: {}", RootContext.getXID());
