@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-feign-seata/account-service/account-service.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-feign-seata/account-service/account-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mbs-vip-seata.iml" filepath="$PROJECT_DIR$/mbs-vip-seata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msb-vip-seata.iml" filepath="$PROJECT_DIR$/msb-vip-seata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multiple-datasource/multiple-datasource.iml" filepath="$PROJECT_DIR$/multiple-datasource/multiple-datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-feign-seata/mysql-common/mysql-common.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-feign-seata/mysql-common/mysql-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-feign-seata/order-service/order-service.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-feign-seata/order-service/order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/spring-cloud-nacos-feign-seata-tcc.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/spring-cloud-nacos-feign-seata-tcc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-feign-seata/storage-service/storage-service.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-feign-seata/storage-service/storage-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-account-service/tcc-account-service.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-account-service/tcc-account-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-mysql-common/tcc-mysql-common.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-mysql-common/tcc-mysql-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-order-service/tcc-order-service.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-order-service/tcc-order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-storage-service/tcc-storage-service.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-storage-service/tcc-storage-service.iml" />
+    </modules>
+  </component>
+</project>

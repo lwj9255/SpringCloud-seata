@@ -1,0 +1,80 @@
+package com.msb.seata.multiple.config;
+
+import com.alibaba.druid.pool.DruidDataSource;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
+
+
+@Configuration
+@MapperScan("com.msb.seata.multiple.mapper")
+public class DataSourceProxyConfig {
+
+    @Bean("originOrder")
+    @ConfigurationProperties(prefix = "spring.datasource.order")
+    public DataSource dataSourceMaster() {
+        return new DruidDataSource();
+    }
+
+    @Bean("originStorage")
+    @ConfigurationProperties(prefix = "spring.datasource.storage")
+    public DataSource dataSourceStorage() {
+        return new DruidDataSource();
+    }
+
+    @Bean("originAccount")
+    @ConfigurationProperties(prefix = "spring.datasource.account")
+    public DataSource dataSourceAccount() {
+        return new DruidDataSource();
+    }
+
+
+    @Bean("dynamicDataSource")
+    public DataSource dynamicDataSource(@Qualifier("originOrder") DataSource dataSourceOrder,
+                                        @Qualifier("originStorage") DataSource dataSourceStorage,
+                                        @Qualifier("originAccount") DataSource dataSourceAccount) {
+
+        DynamicRoutingDataSource dynamicRoutingDataSource = new DynamicRoutingDataSource();
+
+        // 数据源的集合
+        Map<Object, Object> dataSourceMap = new HashMap<>(3);
+        dataSourceMap.put(DataSourceKey.ORDER.name(), dataSourceOrder);
+        dataSourceMap.put(DataSourceKey.STORAGE.name(), dataSourceStorage);
+        dataSourceMap.put(DataSourceKey.ACCOUNT.name(), dataSourceAccount);
+
+        // 设置默认的数据源
+        dynamicRoutingDataSource.setDefaultTargetDataSource(dataSourceOrder);
+        // 设置目标数据源
+        dynamicRoutingDataSource.setTargetDataSources(dataSourceMap);
+
+        DynamicDataSourceContextHolder.getDataSourceKeys().addAll(dataSourceMap.keySet());
+
+        return dynamicRoutingDataSource;
+    }
+
+    @Bean
+    @ConfigurationProperties(prefix = "mybatis")
+    public SqlSessionFactoryBean sqlSessionFactoryBean(@Qualifier("dynamicDataSource") DataSource dataSource) {
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(dataSource);
+    
+        org.apache.ibatis.session.Configuration configuration=new org.apache.ibatis.session.Configuration();
+        //使用jdbc的getGeneratedKeys获取数据库自增主键值
+        configuration.setUseGeneratedKeys(true);
+        //使用列别名替换列名
+        configuration.setUseColumnLabel(true);
+        //自动使用驼峰命名属性映射字段，如userId ---> user_id
+        configuration.setMapUnderscoreToCamelCase(true);
+        sqlSessionFactoryBean.setConfiguration(configuration);
+        
+        return sqlSessionFactoryBean;
+    }
+
+}

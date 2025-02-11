@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tcc-account-service" />
+        <module name="tcc-storage-service" />
+        <module name="mysql-common" />
+        <module name="tcc-order-service" />
+        <module name="order-service" />
+        <module name="storage-service" />
+        <module name="tcc-mysql-common" />
+        <module name="account-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="account-service" options="-parameters" />
+      <module name="mysql-common" options="-parameters" />
+      <module name="order-service" options="-parameters" />
+      <module name="storage-service" options="-parameters" />
+      <module name="tcc-account-service" options="-parameters" />
+      <module name="tcc-mysql-common" options="-parameters" />
+      <module name="tcc-order-service" options="-parameters" />
+      <module name="tcc-storage-service" options="-parameters" />
+    </option>
+  </component>
+</project>

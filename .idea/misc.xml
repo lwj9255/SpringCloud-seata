@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/multiple-datasource/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-nacos-feign-seata/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-nacos-feign-seata/account-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-nacos-feign-seata/order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-nacos-feign-seata/storage-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-account-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-nacos-feign-seata-tcc/tcc-storage-service/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/springcloud-nacos-fegin-seata/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>
